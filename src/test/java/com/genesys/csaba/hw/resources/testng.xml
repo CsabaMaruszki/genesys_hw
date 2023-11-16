@@ -1,0 +1,54 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite thread-count="1" verbose="1" name="Homework Suite" annotations="JDK">
+    <parameter name="chromeDriverPath" value="C:\Users\Csaba\Documents\asd\chromedriver.exe"/>
+    <parameter name="implicitWaitSeconds" value="10"/>
+
+    <test name="Case1">
+        <parameter name="credentialFileName" value="credential.json"/>
+        <parameter name="url" value="https://www.saucedemo.com/inventory.html"/>
+        <parameter name="firstname" value="Fname"/>
+        <parameter name="lastname" value="Lname"/>
+        <parameter name="postalCode" value="1111"/>
+
+        <classes>
+            <class name="com.genesys.csaba.hw.selenium.AutomatePurchaseProcessTest"/>
+        </classes>
+    </test>
+
+    <test name="Case2">
+        <parameter name="url" value="https://www.saucedemo.com/inventory.html"/>
+        <parameter name="username" value="standard_user"/>
+        <parameter name="password" value="secret_sauce"/>
+
+        <classes>
+            <class name="com.genesys.csaba.hw.selenium.VerifyErrorMessagesTest"/>
+        </classes>
+    </test>
+
+    <test name="Case3">
+        <parameter name="url" value="https://onlinehtmleditor.dev/"/>
+        <parameter name="boldTextInput" value="Automation"/>
+        <parameter name="underlinedTextInput" value="Test"/>
+        <parameter name="undecoratedTextInput" value="Example"/>
+        <classes>
+            <class name="com.genesys.csaba.hw.selenium.RichTextEditorTest"/>
+        </classes>
+    </test>
+
+    <test name="Case4">
+        <parameter name="url" value="https://demo.guru99.com/test/guru99home"/>
+        <classes>
+            <class name="com.genesys.csaba.hw.selenium.IframeAndTabHandlingTest"/>
+        </classes>
+    </test>
+
+    <test name="Case5">
+        <parameter name="host" value="https://jsonplaceholder.typicode.com"/>
+        <parameter name="endpoint" value="/users"/>
+
+        <classes>
+            <class name="com.genesys.csaba.hw.api.RestApiTest"/>
+        </classes>
+    </test>
+</suite>
